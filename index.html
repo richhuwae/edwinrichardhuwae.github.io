@@ -1,41 +1,53 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Edwin Richard Huwae | Financial Expert & Data Analytics Professional</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="description" content="Financial Expert & Data Analytics Professional">
-    <meta property="og:type" content="website">
+    <title>Edwin Richard Huwae | Financial Expert & Data Analytics Professional</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfolio of Edwin Richard Huwae - Financial Expert and Data Analytics Professional with expertise in project accounting and advanced analytics">
+    <meta name="keywords" content="data analytics, financial analysis, project management, Python, SQL, business intelligence">
     
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="erhpw.css" />
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Edwin Richard Huwae - Data Analytics Professional">
+    <meta property="og:description" content="Financial Expert with over a decade of experience, pursuing advanced data analytics">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" as="style">
+    <link rel="stylesheet" href="erhpw.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Favicon (add your own favicon file) -->
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 
 <body>
-    <div id="wrapper">
-        <!-- Navigation -->
-        <nav class="main-nav">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header role="banner">
+        <nav class="main-nav" role="navigation" aria-label="Main Navigation">
             <h1 class="site-title">Edwin Richard Huwae</h1>
             <ul>
-                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#home" class="nav-link" aria-current="page">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
                 <li><a href="erh_resume.pdf" target="_blank" rel="noopener noreferrer" class="resume-btn">Resume</a></li>
             </ul>
         </nav>
+    </header>
 
+    <main id="main-content">
         <!-- Hero Section -->
-        <section id="home" class="hero">
+        <section id="home" class="hero" aria-labelledby="hero-title">
             <p class="welcome">Welcome to my portfolio</p>
-            <h2>From Numbers to Data:<br>A Journey in Analytics</h2>
+            <h2 id="hero-title">From Numbers to Data:<br>A Journey in Analytics</h2>
             <p class="subtitle">With over a decade of experience in project accounting, I'm now pursuing my passion for data analytics through an MSc in Data Analytics for Business at KEDGE Business School.</p>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="about-section">
-            <h2>About Me</h2>
+        <section id="about" class="about-section" aria-labelledby="about-title">
+            <h2 id="about-title">About Me</h2>
             <div class="about-grid">
                 <div class="about-card">
                     <h3>Professional Background</h3>
@@ -71,60 +83,72 @@
                     <p>Currently pursuing MSc Data Analytics for Business at KEDGE Business School, combining financial expertise with cutting-edge data analysis techniques.</p>
                     
                     <h4>Technical Skills</h4>
-                    <ul class="skill-list">
-                        <li>
-                            <span class="skill-name">Data Analytics</span>
-                            <div class="skill-detail">Python, SQL, Data Visualization</div>
-                        </li>
-                        <li>
-                            <span class="skill-name">Machine Learning</span>
-                            <div class="skill-detail">Predictive Analytics</div>
-                        </li>
-                    </ul>
-
-                    <h4>Business Focus</h4>
-                    <ul class="skill-list">
-                        <li>
-                            <span class="skill-name">Business Intelligence</span>
-                            <div class="skill-detail">Power BI, Tableau</div>
-                        </li>
-                        <li>
-                            <span class="skill-name">Statistical Analysis</span>
-                            <div class="skill-detail">Advanced Analytics & Modeling</div>
-                        </li>
-                    </ul>
+                    <div class="skills-matrix">
+                        <div class="skill-category">
+                            <h5>Programming</h5>
+                            <ul>
+                                <li>Python</li>
+                                <li>SQL</li>
+                                <li>R</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h5>Data Tools</h5>
+                            <ul>
+                                <li>Power BI</li>
+                                <li>Tableau</li>
+                                <li>Excel Advanced</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h5>Machine Learning</h5>
+                            <ul>
+                                <li>Predictive Analytics</li>
+                                <li>Statistical Modeling</li>
+                                <li>Data Visualization</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="projects-section">
-            <h2>Projects</h2>
+        <section id="projects" class="projects-section" aria-labelledby="projects-title">
+            <h2 id="projects-title">Projects</h2>
             <p class="section-intro">Exploring data analytics across various industries, combining my background in project accounting with cutting-edge analytical techniques.</p>
             
             <div class="project-grid">
                 <article class="project-card">
                     <div class="project-image">
-                        <img src="healthcare.webp" alt="Healthcare Analytics Project" loading="lazy">
+                        <img src="healthcare.webp" alt="Healthcare Analytics Dashboard showcasing patient outcome predictions and medical data insights" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3>Healthcare Analytics</h3>
-                        <p>Analytics projects focused on healthcare data and patient outcomes.</p>
+                        <p>Advanced analytics project focusing on patient outcome predictions using machine learning techniques.</p>
+                        <div class="project-details">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Machine Learning</span>
+                        </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">View Project</a>
+                            <a href="https://github.com/richhuwae/healthcare-analytics" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
                         </div>
                     </div>
                 </article>
 
                 <article class="project-card">
                     <div class="project-image">
-                        <img src="fanalytics.webp" alt="Financial Analytics Project" loading="lazy">
+                        <img src="fanalytics.webp" alt="Financial Analytics Visualization with economic trend forecasting and predictive models" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3>Financial Analysis</h3>
-                        <p>Financial analysis and economic trend forecasting.</p>
+                        <p>Comprehensive financial analysis and economic trend forecasting using advanced statistical modeling.</p>
+                        <div class="project-details">
+                            <span class="project-tag">SQL</span>
+                            <span class="project-tag">Power BI</span>
+                        </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">View Project</a>
+                            <a href="https://github.com/richhuwae/financial-analytics" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
                         </div>
                     </div>
                 </article>
@@ -132,8 +156,11 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <h2>Connect With Me</h2>
+        <section id="contact" class="contact-section" aria-labelledby="contact-title">
+            <h2 id="contact-title">Connect With Me</h2>
+            <div class="contact-intro">
+                <p>Open to collaboration, consulting, or discussing innovative data analytics projects.</p>
+            </div>
             <div class="social-links">
                 <a href="mailto:erichard2106@gmail.com" class="social-link" aria-label="Email">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -141,24 +168,41 @@
                         <path d="m22 4-10 8L2 4"></path>
                     </svg>
                 </a>
-                <a href="https://www.linkedin.com/in/edwinhuwae" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/edwinhuwae" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn Profile">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                         <rect x="2" y="9" width="4" height="12"></rect>
                         <circle cx="4" cy="4" r="2"></circle>
                     </svg>
                 </a>
-                <a href="https://github.com/richhuwae" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                <a href="https://github.com/richhuwae" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub Profile">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                     </svg>
                 </a>
             </div>
         </section>
-    </div>
+    </main>
 
-    <footer class="footer">
-        <p>&copy; 2024 Edwin Richard Huwae. All rights reserved.</p>
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <p>&copy; 2024 Edwin Richard Huwae. All rights reserved.</p>
+            <nav class="footer-nav" aria-label="Footer Navigation">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </footer>
+
+    <!-- Optional: Add dark mode toggle script here -->
+    <script>
+        // Simple accessibility skip link functionality
+        document.querySelector('.skip-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#main-content').focus();
+        });
+    </script>
 </body>
 </html>
