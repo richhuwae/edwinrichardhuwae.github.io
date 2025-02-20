@@ -1,15 +1,13 @@
-/* erhpw.css - Edwin Richard Huwae Portfolio Website Styles */
+/* erhpw.css - Edwin Richard Huwae Portfolio Website */
 
 /* Root Variables */
 :root {
-    /* Color System */
+    /* Colors */
     --color-primary: #000000;
     --color-secondary: #333333;
     --color-accent: #666666;
     --color-background: #ffffff;
     --color-surface: #f5f5f5;
-    --color-error: #dc3545;
-    --color-success: #28a745;
     
     /* Typography */
     --font-primary: 'Inter', sans-serif;
@@ -23,12 +21,10 @@
     --space-xl: 4rem;
     
     /* Transitions */
-    --transition-fast: 150ms ease-in-out;
-    --transition-normal: 300ms ease-in-out;
-    --transition-slow: 500ms ease-in-out;
+    --transition-normal: 0.3s ease;
 }
 
-/* Reset and Base Styles */
+/* Reset & Base Styles */
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -46,12 +42,6 @@ body {
     background: var(--color-background);
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
 /* Layout */
 #wrapper {
     max-width: 1200px;
@@ -66,20 +56,24 @@ img {
     padding: var(--space-md) 0;
     background: var(--color-background);
     z-index: 1000;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 0;
-    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.logo {
+.site-title {
     font-family: var(--font-display);
     font-size: 1.5rem;
     font-weight: 700;
+    color: var(--color-primary);
+    margin: 0;
+    padding: 0;
+    background: none;
 }
 
 .main-nav ul {
     display: flex;
-    gap: var(--space-lg);
+    gap: 2rem;
     list-style: none;
 }
 
@@ -87,33 +81,17 @@ img {
     text-decoration: none;
     color: var(--color-primary);
     font-weight: 500;
-    position: relative;
-    padding: var(--space-xs) 0;
+    transition: color var(--transition-normal);
 }
 
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--color-primary);
-    transition: width var(--transition-normal);
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-    width: 100%;
+.nav-link:hover {
+    color: var(--color-secondary);
 }
 
 /* Hero Section */
 .hero {
     padding: var(--space-xl) 0;
     text-align: center;
-    background: var(--color-background);
-    position: relative;
-    z-index: 1;
 }
 
 .welcome {
@@ -121,7 +99,6 @@ img {
     letter-spacing: 2px;
     font-size: 0.9rem;
     margin-bottom: var(--space-lg);
-    opacity: 0.7;
 }
 
 h1 {
@@ -142,16 +119,10 @@ h1 {
 }
 
 /* About Section */
-/* Refined About Section Styles */
 .about-section {
-    padding: 6rem 0;
+    padding: var(--space-xl) 0;
     background: var(--color-surface);
-}
-
-.about-section h2 {
     text-align: center;
-    margin-bottom: 4rem;
-    font-family: var(--font-display);
 }
 
 .about-grid {
@@ -159,8 +130,7 @@ h1 {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+    margin: var(--space-xl) auto 0;
 }
 
 .about-card {
@@ -168,6 +138,7 @@ h1 {
     padding: 3rem;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
 }
 
 .about-card h3 {
@@ -176,99 +147,28 @@ h1 {
     margin-bottom: 1.5rem;
 }
 
-.about-card > p {
-    margin-bottom: 2.5rem;
-    line-height: 1.6;
-    color: var(--color-secondary);
-}
-
-/* Skill Groups */
-.skill-group {
+.about-card p {
     margin-bottom: 2rem;
+    line-height: 1.6;
 }
 
-.skill-group:last-child {
-    margin-bottom: 0;
-}
-
-.skill-group h4 {
-    font-family: var(--font-display);
-    font-size: 1.25rem;
-    margin-bottom: 1.25rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--color-surface);
-}
-
-/* Individual Skills */
-.skill-item {
-    margin-bottom: 1.25rem;
-}
-
-.skill-item:last-child {
-    margin-bottom: 0;
-}
-
-.skill-name {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.skill-detail {
-    color: var(--color-secondary);
-    font-size: 0.95rem;
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-    .about-grid {
-        grid-template-columns: 1fr;
-        max-width: 600px;
-    }
-
-    .about-card {
-        padding: 2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .about-section {
-        padding: 4rem 0;
-    }
-
-    .about-grid {
-        padding: 0 1rem;
-    }
-
-    .about-card h3 {
-        font-size: 1.5rem;
-    }
-}
 /* Projects Section */
 .projects-section {
     padding: var(--space-xl) 0;
-    text-align: center;
-}
-
-.section-intro {
-    max-width: 800px;
-    margin: 0 auto 4rem;
 }
 
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    margin-top: var(--space-xl);
 }
 
 .project-card {
     background: var(--color-surface);
     border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-normal);
 }
 
 .project-card:hover {
@@ -289,39 +189,10 @@ h1 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
 }
 
 .project-content {
     padding: 1.5rem;
-}
-
-.project-content h3 {
-    margin-bottom: 1rem;
-    font-family: var(--font-display);
-}
-
-.project-content p {
-    margin-bottom: 1.5rem;
-    color: var(--color-secondary);
-}
-
-.project-links {
-    margin-top: 1rem;
-}
-
-.project-link {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background: var(--color-primary);
-    color: var(--color-background);
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.project-link:hover {
-    background: var(--color-secondary);
 }
 
 /* Contact Section */
@@ -329,8 +200,6 @@ h1 {
     padding: var(--space-xl) 0;
     background: var(--color-surface);
     text-align: center;
-    position: relative;
-    z-index: 1;
 }
 
 .social-links {
@@ -349,48 +218,36 @@ h1 {
     border-radius: 50%;
     background: var(--color-background);
     color: var(--color-primary);
-    transition: all 0.3s ease;
+    transition: all var(--transition-normal);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .social-link:hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     background: var(--color-primary);
     color: var(--color-background);
 }
 
-.social-link svg {
-    width: 24px;
-    height: 24px;
-}
-
-/* Footer */
-.footer {
-    padding: var(--space-lg) 0;
-    text-align: center;
+/* Resume Button */
+.resume-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
     background: var(--color-primary);
     color: var(--color-background);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color var(--transition-normal);
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.fade-in {
-    animation: fadeIn var(--transition-normal);
+.resume-btn:hover {
+    background: var(--color-secondary);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
-    }
-
     .main-nav {
-        padding: var(--space-sm);
+        flex-direction: column;
+        gap: 1rem;
     }
 
     .main-nav ul {
@@ -398,34 +255,41 @@ h1 {
         text-align: center;
     }
 
-    .project-grid {
-        grid-template-columns: 1fr;
-        padding: 0 1rem;
+    h1 {
+        font-size: 2.5rem;
     }
 
     .about-grid {
         grid-template-columns: 1fr;
     }
 
-    .social-links {
-        gap: 1rem;
+    .about-card {
+        padding: 2rem;
     }
 
     .social-link {
         width: 40px;
         height: 40px;
     }
+}
 
-    .social-link svg {
-        width: 20px;
-        height: 20px;
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
 /* Print Styles */
 @media print {
     .main-nav,
-    .contact-section,
     .social-links {
         display: none;
     }
@@ -440,7 +304,6 @@ h1 {
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
