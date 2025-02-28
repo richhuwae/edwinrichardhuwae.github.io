@@ -48,7 +48,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--space-md) 0;
+    padding: var(--space-md) var(--space-lg);
+    flex-wrap: wrap;
 }
 
 .site-title {
@@ -69,6 +70,16 @@ body {
     text-decoration: none;
     color: var(--color-primary);
     font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--color-secondary);
+}
+
+.main-nav a.active {
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-primary);
 }
 
 .resume-btn {
@@ -81,6 +92,39 @@ body {
 .resume-btn:hover {
     background: var(--color-primary);
     color: var(--color-background);
+}
+
+/* Mobile Navigation Toggle */
+.mobile-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mobile-nav-toggle span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--color-primary);
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-toggle.active span:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+}
+
+.mobile-nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-nav-toggle.active span:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
 }
 
 /* Hero Section */
@@ -183,6 +227,12 @@ body {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .project-image {
@@ -271,14 +321,28 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .mobile-nav-toggle {
+        display: flex;
+    }
+    
     .main-nav {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: var(--space-md);
     }
 
     .main-nav ul {
         flex-direction: column;
         align-items: center;
+        width: 100%;
+        display: none;
+        gap: var(--space-md);
+        padding: var(--space-md) 0;
+    }
+    
+    .main-nav ul.show {
+        display: flex;
     }
 
     .hero h1 {
@@ -292,5 +356,9 @@ body {
 
     .about-card {
         padding: 1.5rem;
+    }
+    
+    .social-links {
+        gap: 1rem;
     }
 }
