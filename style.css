@@ -847,8 +847,8 @@ footer a:hover { color: var(--text); }
   display: none;
   position: fixed;
   top: 90px;
-  left: 16px;
-  right: 16px;
+  left: 24px;
+  right: 24px;
   background: rgba(247, 246, 243, 0.98);
   backdrop-filter: blur(12px);
   border: 1px solid var(--border);
@@ -881,9 +881,9 @@ footer a:hover { color: var(--text); }
   .hamburger { display: flex; }
 
   nav {
-    left: 16px;
-    right: 16px;
-    max-width: calc(100% - 32px);
+    left: 24px;
+    right: 24px;
+    max-width: calc(100% - 48px);
     margin: 0;
   }
 
