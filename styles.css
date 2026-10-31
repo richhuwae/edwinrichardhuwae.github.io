@@ -673,7 +673,16 @@ h1, h2, h3 {
   margin-top: 10px;
   font-family: var(--font-mono);
   font-size: 0.82rem;
+  text-align: center;
 }
+.embed__fallback a {
+  color: var(--accent);
+  text-decoration-color: var(--rule);
+  text-underline-offset: 3px;
+}
+.embed__fallback a:hover,
+.embed__fallback a:focus-visible { text-decoration-color: var(--accent); }
+.embed__fallback span { color: var(--ink-faint); }
 
 @media (max-width: 640px) {
   .ledger-table--steps .ledger-row { grid-template-columns: 1fr; }
