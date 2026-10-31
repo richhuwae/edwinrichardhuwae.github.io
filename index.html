@@ -2,17 +2,24 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Edwin Richard Huwae, data analyst with a finance background</title>
 <meta name="description" content="Edwin Richard Huwae: data analyst with nine years in finance and project accounting, finishing an MSc in Data Analytics for Business. Based in Paris, available from January 2027.">
+<link rel="canonical" href="https://edwinrichardhuwae.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://edwinrichardhuwae.com/">
+<meta property="og:title" content="Edwin Richard Huwae, data analyst">
+<meta property="og:description" content="Nine years in finance, now building the dashboards and KPI definitions that turn finance and people data into numbers a business trusts.">
+<meta name="theme-color" content="#ECEEEC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1211" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=5">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=6">
 
 <!-- Simple Analytics -->
 <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
@@ -20,394 +27,246 @@
 <body>
 <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
 
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
 
-<header class="masthead">
-  <a class="masthead__mark" href="#top" aria-label="Edwin Richard Huwae, back to top">
-    <span aria-hidden="true">E</span>
-    <span aria-hidden="true">R</span>
-    <span aria-hidden="true">H</span>
-  </a>
-  <nav class="ledger-tabs" aria-label="Section navigation">
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<main id="main">
-
-  <section class="hero" id="top">
-    <h1 class="hero__name">Edwin Richard Huwae</h1>
-    <p class="hero__role">Data analyst with a finance background</p>
-    <p class="hero__tagline">Most analysts learn to read a P&amp;L.<br>I built them for nine years.</p>
-
-    <div class="hero__actions">
-      <a class="btn btn--primary" href="mailto:edwinrichardhuwae@gmail.com">Send email</a>
-      <a class="btn btn--outline" href="assets/ERH_Resume.pdf" download>Download CV</a>
+<nav class="nav" aria-label="Sections">
+  <div class="nav__bar">
+    <a class="nav__name" href="#top">Edwin Huwae</a>
+    <div class="nav__links">
+      <a href="#work">Work</a>
+      <a href="#approach">Approach</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
     </div>
-    <p class="hero__meta">Based in Paris. Available from January 2027.</p>
-  </section>
+    <a class="pill" href="#contact">Let's talk</a>
+  </div>
+</nav>
 
-  <section class="section section--rule" id="about">
-    <div class="section-head">
-      <h2 class="section-head__title">About</h2>
-    </div>
-    <p class="prose">
-      I started as a project accountant in Indonesia and ended up overseeing the finances
-      of several construction sites at once. Along the way I saw how much one unreliable
-      number can cost: a delayed decision, a missed budget, a project review that goes
-      sideways. That is what drove me to go back to school.
-    </p>
-    <p class="prose">
-      I'm now finishing an MSc in Data Analytics for Business at KEDGE Business School and
-      doing the work I always wanted to do: SQL, Python and BI that turn raw financial and
-      operational data into numbers a business can act on.
-    </p>
+<div class="wrap">
+<main class="frame" id="main">
 
-    <div class="ledger-table ledger-table--languages" aria-label="Languages">
-      <div class="ledger-row ledger-row--head">
-        <span>Language</span><span>Level</span>
-      </div>
-      <div class="ledger-row"><span>English</span><span>Full professional</span></div>
-      <div class="ledger-row"><span>French</span><span>Elementary, improving</span></div>
-      <div class="ledger-row"><span>Indonesian</span><span>Native</span></div>
-    </div>
-  </section>
-
-  <section class="section" id="skills">
-    <div class="section-head">
-      <h2 class="section-head__title">Skills</h2>
-    </div>
-    <div class="accounts">
-      <div class="accounts__group">
-        <h3>Analytics &amp; BI</h3>
-        <ul>
-          <li>SQL (BigQuery, DuckDB)</li>
-          <li>Power BI (DAX, Power Query)</li>
-          <li>Looker Studio</li>
-          <li>Tableau</li>
-          <li>Metabase</li>
-          <li>KPI design</li>
-          <li>Dashboard reporting</li>
-          <li>Excel &amp; Google Sheets (advanced)</li>
-        </ul>
-      </div>
-      <div class="accounts__group">
-        <h3>Programming &amp; data science</h3>
-        <ul>
-          <li>Python (Pandas, NumPy, scikit-learn)</li>
-          <li>Matplotlib</li>
-          <li>Machine learning (Random Forest, XGBoost, clustering, regression)</li>
-          <li>Exploratory data analysis</li>
-          <li>Reporting automation</li>
-          <li>Budgeting &amp; variance analysis</li>
-          <li>Financial reporting</li>
-          <li>Project accounting</li>
-        </ul>
+  <section class="band hero" id="top">
+    <div class="band__inner">
+      <p class="hero__who rise">Edwin Richard Huwae, data analyst</p>
+      <h1 class="rise rise-1">Most analysts learn to read a P&amp;L. I built them for nine years.</h1>
+      <p class="hero__sub rise rise-2">Now I build the dashboards and KPI definitions that turn finance and people data into numbers a business trusts. Based in Paris, available from January 2027.</p>
+      <div class="hero__actions rise rise-2">
+        <a class="pill" href="#work">See my work <span class="arrow arrow--down" aria-hidden="true">↓</span></a>
+        <a class="pill pill--ghost" href="assets/ERH_Resume.pdf" download>Download CV</a>
       </div>
     </div>
+    <div class="facts">
+      <div class="fact"><div class="fact__num">9 yrs</div><p class="fact__label">running project finance on construction sites</p></div>
+      <div class="fact"><div class="fact__num">2</div><p class="fact__label">analytics internships, at Amplitude and Doctolib</p></div>
+      <div class="fact"><div class="fact__num">1st</div><p class="fact__label">place, CGI France × BNP Paribas hackathon</p></div>
+    </div>
   </section>
 
-  <section class="section section--rule" id="experience">
-    <div class="section-head">
-      <h2 class="section-head__title">Experience</h2>
-    </div>
-
-    <article class="entry">
-      <header class="entry__head">
-        <div>
-          <h3>People Strategy Business Analyst Intern</h3>
-          <p class="entry__org">Doctolib, Levallois-Perret, France</p>
+  <section class="band" aria-label="Tools">
+    <div class="tools">
+      <p class="tools__label">The tools I work in every day</p>
+      <div class="marquee" id="marquee">
+        <div class="marquee__track">
+          <span>SQL</span><span>Metabase</span><span>Python</span><span>Power BI</span><span>BigQuery</span><span>Looker Studio</span><span>Tableau</span><span>Excel</span><span>scikit-learn</span>
+          <span aria-hidden="true">SQL</span><span aria-hidden="true">Metabase</span><span aria-hidden="true">Python</span><span aria-hidden="true">Power BI</span><span aria-hidden="true">BigQuery</span><span aria-hidden="true">Looker Studio</span><span aria-hidden="true">Tableau</span><span aria-hidden="true">Excel</span><span aria-hidden="true">scikit-learn</span>
         </div>
-        <span class="entry__date">Jul to Dec 2026, current</span>
-      </header>
-      <p class="prose prose--tight">
-        Leading the build of the People Data Hub in Metabase: KPI definitions for attrition,
-        demographics and terminations, one source of truth for People Strategy, People
-        Development, Talent Acquisition and HRBPs, with every figure validated against the
-        HRMS. Alongside it, ad hoc studies (global attrition, workforce demographics, Comex
-        span of control) and the monthly HRBP and office-attendance dashboards.
-      </p>
-    </article>
-
-    <article class="entry">
-      <header class="entry__head">
-        <div>
-          <h3>Business Intelligence Analyst Intern</h3>
-          <p class="entry__org">Amplitude Laser Group, Pessac, France</p>
-        </div>
-        <span class="entry__date">Jun to Sep 2025</span>
-      </header>
-      <p class="prose prose--tight">
-        Moved after-sales reporting off spreadsheets: cleaned and validated data across
-        product lines with SQL in BigQuery, then built Looker Studio dashboards with
-        drill-down KPIs for backlog, revenue and service performance, designed with the
-        team that uses them.
-      </p>
-    </article>
-
-    <article class="entry">
-      <header class="entry__head">
-        <div>
-          <h3>Project Accountant to Finance Officer</h3>
-          <p class="entry__org">Lintas Intim Group Construction, Indonesia</p>
-        </div>
-        <span class="entry__date">Jul 2015 to Aug 2024</span>
-      </header>
-      <ul class="entry__titles">
-        <li><span>2024</span> Project Finance &amp; Accounting Officer</li>
-        <li><span>2020 to 2023</span> Project Accounting Manager</li>
-        <li><span>2018 to 2020</span> Senior Project Accountant</li>
-        <li><span>2015 to 2018</span> Project Accountant</li>
-      </ul>
-      <p class="prose prose--tight">
-        Financial oversight and reporting across several construction sites. Each month I
-        prepared the progress reports (termijn) for Indonesia's Ministry of Public Works that
-        decided when government contract payments were released, alongside payroll and
-        logistics at a small, family-run company.
-      </p>
-    </article>
-
-    <article class="entry">
-      <header class="entry__head">
-        <div>
-          <h3>Tax Specialist</h3>
-          <p class="entry__org">Lintas Intim Group, Ambon, Indonesia</p>
-        </div>
-        <span class="entry__date">Oct 2010 to Jun 2014</span>
-      </header>
-      <p class="prose prose--tight">
-        Prepared and filed tax returns, reducing the risk of penalties, and streamlined
-        information flows between departments.
-      </p>
-    </article>
-  </section>
-
-  <section class="section" id="education">
-    <div class="section-head">
-      <h2 class="section-head__title">Education</h2>
-    </div>
-
-    <article class="entry">
-      <header class="entry__head">
-        <div>
-          <h3><a href="https://student.kedge.edu/programmes/msc-in-data-analytics-for-business" target="_blank" rel="noopener">MSc in Data Analytics for Business</a></h3>
-          <p class="entry__org"><a href="https://www.kedge.edu/" target="_blank" rel="noopener">KEDGE Business School</a>, Bordeaux, France</p>
-        </div>
-        <span class="entry__date">Sep 2024 to Apr 2027</span>
-      </header>
-      <p class="prose prose--tight prose--muted">
-        Selected coursework: Python Bootcamp, Machine Learning, Data Visualization, Data
-        Management, Fundamentals of Data Analytics for Business, Coding Skills,
-        Digitalization of Organizations, Business and Artificial Intelligence, Impacts of
-        Artificial Intelligence, Management of Financial Performance.
-      </p>
-    </article>
-
-    <article class="entry">
-      <header class="entry__head">
-        <div>
-          <h3><a href="https://feb.ut.ac.id/program-studi-manajemen-s1/" target="_blank" rel="noopener">Bachelor of Management</a></h3>
-          <p class="entry__org"><a href="https://www.ut.ac.id/" target="_blank" rel="noopener">Universitas Terbuka</a>, South Tangerang, Indonesia</p>
-        </div>
-        <span class="entry__date">Apr 2023</span>
-      </header>
-      <p class="prose prose--tight prose--muted">
-        Selected coursework: Financial Management, Management Accounting, Cost Accounting,
-        Budgeting, Management Information Systems, Operations Research, Economic
-        Statistics, Performance Management, Risk Management.
-      </p>
-    </article>
-
-    <article class="entry">
-      <header class="entry__head">
-        <div>
-          <h3><a href="https://www.mdc.edu/accountingbudgeting/" target="_blank" rel="noopener">Business Operations &amp; Business Specialist Certificates</a></h3>
-          <p class="entry__org"><a href="https://www.mdc.edu/" target="_blank" rel="noopener">Miami Dade College</a>, Accounting &amp; Budgeting, Miami, USA</p>
-        </div>
-        <span class="entry__date">2014 to 2015</span>
-      </header>
-      <p class="prose prose--tight">
-        Competitively selected for the US State Department's
-        <a href="https://exchanges.state.gov/non-us/program/community-college-initiative-program" target="_blank" rel="noopener">Community College Initiative Program</a>,
-        a fully funded scholarship for international students, as one of a small number
-        chosen from Indonesia.
-      </p>
-    </article>
-
-    <div class="ledger-table ledger-table--certs" aria-label="Certifications">
-      <div class="ledger-row ledger-row--head">
-        <span>Certification</span><span>Issuer</span>
       </div>
-      <div class="ledger-row"><span><a href="https://coursera.org/share/8e03d2ec90a8ab28cc3df8e538788838" target="_blank" rel="noopener">Google Data Analytics Certificate</a></span><span>Google, via Coursera</span></div>
-      <div class="ledger-row"><span><a href="https://www.datacamp.com/certificate/SQA0011549646937" target="_blank" rel="noopener">SQL Associate Certificate</a></span><span>DataCamp</span></div>
-      <div class="ledger-row"><span><a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/33dfd043df80f66cfda3cd2c6209b07016cfa506" target="_blank" rel="noopener">Power BI (DAX, Power Query)</a></span><span>DataCamp</span></div>
-      <div class="ledger-row"><span><a href="https://www.datacamp.com/certificate/DAA0014895709861" target="_blank" rel="noopener">Data Analyst Associate Certificate</a></span><span>DataCamp</span></div>
-      <div class="ledger-row"><span><a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/11d4ffd263f4c1c94871d6dedc06bb0f2239ffe7" target="_blank" rel="noopener">Machine Learning Fundamentals</a></span><span>DataCamp</span></div>
+      <button class="icon-btn" id="marqueeBtn" type="button" aria-label="Pause the scrolling list">II</button>
     </div>
   </section>
 
-  <section class="section" id="recommendations">
-    <div class="section-head">
-      <h2 class="section-head__title">Recommendations</h2>
-    </div>
-    <div class="exhibits">
-      <figure class="exhibit">
-        <blockquote>
-          I strongly recommend Edwin, who completed a 3-month internship with our team at
-          Amplitude. He quickly grasped the technical and organisational challenges of our
-          business and made a major contribution in developing several Business
-          Intelligence dashboards for our after-sales department. Edwin has an excellent
-          analytical mind, strong working autonomy, and always maintained a professional
-          and respectful attitude. Despite the French language barrier, he collaborated
-          effectively with the entire team. I am convinced that Edwin will succeed in any
-          demanding professional environment.
-        </blockquote>
-        <figcaption>
-          Anthony Pinal, Customer Service Director, Laser Product &amp; Solutions,
-          Amplitude Laser Group <span>· Sep 2025</span>
-        </figcaption>
-      </figure>
-      <figure class="exhibit">
-        <blockquote>
-          I had the pleasure of supervising Edwin during his internship at Amplitude.
-          Edwin distinguished himself by his excellent mindset, punctuality, and
-          reliability. He demonstrated great autonomy and a sharp sense of responsibility,
-          adapting to new situations very quickly and rapidly growing in competence. Edwin
-          was a valuable asset to our team.
-        </blockquote>
-        <figcaption>
-          Pierre Constant, Product Engineer, Data &amp; AI Strategy, ex-Bain &amp; Co
-          (internship mentor, Amplitude) <span>· Sep 2025</span>
-        </figcaption>
-      </figure>
-    </div>
-  </section>
+  <section class="band" id="work">
+    <div class="band__inner">
+      <div class="head rise">
+        <div>
+          <h2>Selected work</h2>
+          <p>Four finished projects. Scroll, and each one slides in on top of the last.</p>
+        </div>
+        <a class="more" href="https://github.com/richhuwae" target="_blank" rel="noopener">All projects on GitHub <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
 
-  <section class="section section--rule" id="projects">
-    <div class="section-head">
-      <h2 class="section-head__title">Projects</h2>
-    </div>
-    <p class="prose prose--muted">
-      Four completed projects, led by a people analytics build in Metabase. Two more case
-      studies are in progress and documented in the open; ask me for a preview.
-    </p>
-
-    <div class="pending">
-      <article class="pending__row pending__row--featured">
-        <span class="pending__status pending__status--done">Completed</span>
-        <div class="pending__body">
-          <h3><a href="people-data-hub/">People Data Hub</a></h3>
-          <p>End-to-end people analytics build in Metabase on public HR data: one cleaned
-            source of truth, written KPI definitions, a headcount reconciliation that matches
-            the source in 136 of 136 months, and a seven-tab dashboard covering attrition,
-            its cost, hiring quality and risk drivers with confidence intervals.</p>
-          <p class="pending__tools">SQL, Metabase, PostgreSQL on Azure</p>
-          <p class="pending__cta"><a href="people-data-hub/">Read the case study</a> <a href="https://demo.edwinrichardhuwae.com/public/dashboard/7fadd7aa-3a7d-46fb-a25d-7f5959a9e72b" target="_blank" rel="noopener">Open the live dashboard</a></p>
-        </div>
-      </article>
-      <article class="pending__row">
-        <span class="pending__status pending__status--done">Completed</span>
-        <div class="pending__body">
-          <h3><a href="https://github.com/richhuwae/consumer-revenue-intelligence" target="_blank" rel="noopener">Consumer Revenue Intelligence</a></h3>
-          <p>End-to-end analytics pipeline on real French market data: behavioural
-            segmentation (clustering), performance driver analysis, churn prediction
-            (Random Forest, AUC 0.903), and LTV modelling.</p>
-          <p class="pending__tools">Python, scikit-learn, Tableau</p>
-        </div>
-      </article>
-      <article class="pending__row">
-        <span class="pending__status pending__status--done">Completed</span>
-        <div class="pending__body">
-          <h3><a href="https://github.com/richhuwae/semishocks" target="_blank" rel="noopener">EU Semiconductor Price Shocks</a></h3>
-          <p>Event-study dashboard tracking Eurostat producer and industrial production
-            indices around real supply shocks (US Section 301 tariffs, COVID-19,
-            Russia and Ukraine, US export controls, the EU Chips Act) with event-window and
-            volatility analysis.</p>
-          <p class="pending__tools">Python, Streamlit, Plotly</p>
-        </div>
-      </article>
-      <article class="pending__row">
-        <span class="pending__status pending__status--done">Completed</span>
-        <div class="pending__body">
-          <h3><a href="https://github.com/richhuwae/carbon-compass-extension" target="_blank" rel="noopener">Carbon Compass</a></h3>
-          <p>Chrome extension that tracks the CO₂ and water footprint of AI prompts across
-            ChatGPT, Claude, and Gemini in real time, using the EcoLogits LCA methodology,
-            with an in-browser small language model giving personalised reduction tips.</p>
-          <p class="pending__tools">JavaScript, Transformers.js, Chrome Manifest V3</p>
-        </div>
-      </article>
-      <article class="pending__row">
-        <span class="pending__status">In progress</span>
-        <div class="pending__body">
-          <h3>After-Sales Performance Dashboard</h3>
-          <p>End-to-end dashboard combining ticket, revenue, and SLA data to help an
-            after-sales team track backlog, response times, and key service KPIs.</p>
-          <p class="pending__tools">SQL, Power BI</p>
-        </div>
-      </article>
-      <article class="pending__row">
-        <span class="pending__status">In progress</span>
-        <div class="pending__body">
-          <h3>Customer Churn &amp; Retention Analysis</h3>
-          <p>Exploratory project looking at churn patterns, cohorts, and retention
-            drivers, with clear charts and simple takeaways for marketing or customer
-            success teams.</p>
-          <p class="pending__tools">SQL, Python</p>
-        </div>
-      </article>
-    </div>
-
-    <div class="stat-row">
-      <div class="stat">
-        <span class="stat__value">1st</span>
-        <span class="stat__label">place at the CGI France × BNP Paribas Personal Finance hackathon, for a customer persona pipeline validated against 1,800+ real NPS responses</span>
+      <div class="stack">
+        <article class="card">
+          <div class="card__art art-1"><div class="card__figure">136/136<small>months where my rebuilt headcount matches the source</small></div></div>
+          <div class="card__body">
+            <div class="card__meta"><span>People analytics</span><span>Metabase, SQL</span></div>
+            <h3><a href="people-data-hub/">People Data Hub</a></h3>
+            <p>A seven-tab dashboard on public HR data: what attrition costs, who leaves and why, and which fixes are worth doing first.</p>
+            <div class="card__links">
+              <a class="more" href="people-data-hub/">Read the case study <span class="arrow" aria-hidden="true">→</span></a>
+              <a class="more" href="https://demo.edwinrichardhuwae.com/public/dashboard/7fadd7aa-3a7d-46fb-a25d-7f5959a9e72b" target="_blank" rel="noopener">Open the dashboard</a>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__art art-2"><div class="card__figure">0.903<small>AUC of the churn model</small></div></div>
+          <div class="card__body">
+            <div class="card__meta"><span>Customer analytics</span><span>Python, Tableau</span></div>
+            <h3><a href="https://github.com/richhuwae/consumer-revenue-intelligence" target="_blank" rel="noopener">Consumer Revenue Intelligence</a></h3>
+            <p>Segmentation, churn prediction and lifetime value on real French market data.</p>
+            <div class="card__links"><a class="more" href="https://github.com/richhuwae/consumer-revenue-intelligence" target="_blank" rel="noopener">View on GitHub <span class="arrow" aria-hidden="true">→</span></a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__art art-3"><div class="card__figure">5<small>supply shocks studied, from Section 301 tariffs to the EU Chips Act</small></div></div>
+          <div class="card__body">
+            <div class="card__meta"><span>Economics</span><span>Python, Streamlit</span></div>
+            <h3><a href="https://github.com/richhuwae/semishocks" target="_blank" rel="noopener">EU Semiconductor Price Shocks</a></h3>
+            <p>An event study of Eurostat producer prices and industrial output around real geopolitical shocks.</p>
+            <div class="card__links"><a class="more" href="https://github.com/richhuwae/semishocks" target="_blank" rel="noopener">View on GitHub <span class="arrow" aria-hidden="true">→</span></a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__art art-4"><div class="card__figure">CO₂<small>and water per AI prompt, measured live in the browser</small></div></div>
+          <div class="card__body">
+            <div class="card__meta"><span>Climate tech</span><span>JavaScript</span></div>
+            <h3><a href="https://github.com/richhuwae/carbon-compass-extension" target="_blank" rel="noopener">Carbon Compass</a></h3>
+            <p>A Chrome extension that tracks the footprint of prompts to ChatGPT, Claude and Gemini, with tips from an in-browser model.</p>
+            <div class="card__links"><a class="more" href="https://github.com/richhuwae/carbon-compass-extension" target="_blank" rel="noopener">View on GitHub <span class="arrow" aria-hidden="true">→</span></a></div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="section section--rule section--contact" id="contact">
-    <div class="section-head">
-      <h2 class="section-head__title">Get in touch</h2>
+  <section class="band" id="approach">
+    <div class="band__inner">
+      <div class="head rise">
+        <div>
+          <h2>How I work</h2>
+          <p>The order I learned in finance: agree on the number, then build on it.</p>
+        </div>
+      </div>
     </div>
-    <p class="prose">
-      Looking for a data analyst who already speaks the language of finance? I'm
-      available from January 2027 and happy to talk sooner.
-    </p>
-    <div class="contact-grid">
-      <a class="contact-link" href="mailto:edwinrichardhuwae@gmail.com">
-        <span class="contact-link__label">Email</span>
-        <span class="contact-link__value">edwinrichardhuwae@gmail.com</span>
-      </a>
-      <a class="contact-link" href="tel:+33744122217">
-        <span class="contact-link__label">Phone</span>
-        <span class="contact-link__value">+33 7 44 12 22 17</span>
-      </a>
-      <a class="contact-link" href="assets/ERH_Resume.pdf" download>
-        <span class="contact-link__label">CV</span>
-        <span class="contact-link__value">Download PDF</span>
-      </a>
-      <a class="contact-link" href="https://www.linkedin.com/in/edwinhuwae/" target="_blank" rel="noopener">
-        <span class="contact-link__label">LinkedIn</span>
-        <span class="contact-link__value">in/edwinhuwae</span>
-      </a>
-      <a class="contact-link" href="https://github.com/richhuwae" target="_blank" rel="noopener">
-        <span class="contact-link__label">GitHub</span>
-        <span class="contact-link__value">richhuwae</span>
-      </a>
-      <span class="contact-link contact-link--filler" aria-hidden="true"></span>
+    <div class="cells">
+      <div class="cell rise"><div class="cell__top"><span>01</span><span>First</span></div><h3>Define the KPIs</h3><p>Write down what every number means before any chart exists, so everyone reads it the same way.</p></div>
+      <div class="cell rise rise-1"><div class="cell__top"><span>02</span><span>Then</span></div><h3>Clean once, reconcile</h3><p>One source of truth, checked against the system it came from, until the totals match.</p></div>
+      <div class="cell rise rise-2"><div class="cell__top"><span>03</span><span>Finally</span></div><h3>Answer, then show</h3><p>Lead with the decision and its cost. The dashboard holds the evidence.</p></div>
     </div>
+  </section>
+
+  <section class="band" id="experience">
+    <div class="dark-wrap">
+      <div class="dark rise">
+        <div class="head">
+          <div>
+            <h2>Experience</h2>
+            <p>From construction-site ledgers to people analytics.</p>
+          </div>
+          <a class="more" href="assets/ERH_Resume.pdf" download>Download CV <span class="arrow arrow--down" aria-hidden="true">↓</span></a>
+        </div>
+        <div class="roles">
+          <div class="role"><span class="role__when">2026, now</span><h3>People Strategy Business Analyst<span>Doctolib, Levallois-Perret</span></h3><p>Building the People Data Hub in Metabase, validated against the HRMS.</p></div>
+          <div class="role"><span class="role__when">2025</span><h3>Business Intelligence Analyst<span>Amplitude Laser Group, Pessac</span></h3><p>Moved after-sales reporting from spreadsheets to BigQuery and Looker Studio.</p></div>
+          <div class="role"><span class="role__when">2015 to 2024</span><h3>Project Accountant to Finance Officer<span>Lintas Intim Group, Indonesia</span></h3><p>Monthly progress reports that released government contract payments.</p></div>
+          <div class="role"><span class="role__when">2010 to 2014</span><h3>Tax Specialist<span>Lintas Intim Group, Ambon</span></h3><p>Tax returns and reporting between departments.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="rec-h">
+    <div class="band__inner">
+      <div class="head rise"><div><h2 id="rec-h">What managers say</h2></div></div>
+      <div class="quotes">
+        <figure class="quote rise">
+          <blockquote>“Edwin has an excellent analytical mind and strong working autonomy. I am convinced that Edwin will succeed in any demanding professional environment.”</blockquote>
+          <figcaption><strong>Anthony Pinal</strong>Customer Service Director, Amplitude Laser Group</figcaption>
+        </figure>
+        <figure class="quote rise rise-1">
+          <blockquote>“He demonstrated great autonomy and a sharp sense of responsibility. Edwin was a valuable asset to our team.”</blockquote>
+          <figcaption><strong>Pierre Constant</strong>Product Engineer, Data and AI Strategy, Amplitude Laser Group</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="education">
+    <div class="band__inner" style="padding-bottom: 40px;">
+      <div class="head rise"><div><h2>Education</h2></div></div>
+    </div>
+    <div class="cells cells--edu">
+      <div class="cell rise"><div class="cell__top"><span>KEDGE</span><span>2024 to 2027</span></div><h3><a href="https://student.kedge.edu/programmes/msc-in-data-analytics-for-business" target="_blank" rel="noopener">MSc Data Analytics for Business</a></h3><p>Python, machine learning, data visualisation, financial performance.</p></div>
+      <div class="cell rise rise-1"><div class="cell__top"><span>Universitas Terbuka</span><span>2023</span></div><h3><a href="https://feb.ut.ac.id/program-studi-manajemen-s1/" target="_blank" rel="noopener">Bachelor of Management</a></h3><p>Management accounting, budgeting, statistics, risk.</p></div>
+      <div class="cell rise rise-2"><div class="cell__top"><span>Miami Dade College</span><span>2014 to 2015</span></div><h3><a href="https://www.mdc.edu/accountingbudgeting/" target="_blank" rel="noopener">Business certificates</a></h3><p>Fully funded by the US State Department's <a href="https://exchanges.state.gov/non-us/program/community-college-initiative-program" target="_blank" rel="noopener">Community College Initiative Program</a>.</p></div>
+    </div>
+    <div class="band__inner" style="padding-top: 0;">
+      <div class="certs rise">
+        <a href="https://coursera.org/share/8e03d2ec90a8ab28cc3df8e538788838" target="_blank" rel="noopener">Google Data Analytics</a>
+        <a href="https://www.datacamp.com/certificate/SQA0011549646937" target="_blank" rel="noopener">SQL Associate</a>
+        <a href="https://www.datacamp.com/certificate/DAA0014895709861" target="_blank" rel="noopener">Data Analyst Associate</a>
+        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/33dfd043df80f66cfda3cd2c6209b07016cfa506" target="_blank" rel="noopener">Power BI</a>
+        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/11d4ffd263f4c1c94871d6dedc06bb0f2239ffe7" target="_blank" rel="noopener">Machine Learning Fundamentals</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band contact" id="contact">
+    <div class="band__inner">
+      <h2 class="rise">Let's talk.</h2>
+      <p class="hero__sub rise rise-1">Open to data and BI analyst roles from January 2027, in Paris or remote. Happy to talk sooner.</p>
+      <div class="contact__row rise rise-2">
+        <a class="email" id="email" href="mailto:edwinrichardhuwae@gmail.com">edwinrichardhuwae@gmail.com</a>
+        <button class="copy" id="copyBtn" type="button">Copy email</button>
+      </div>
+      <div class="contact__links rise rise-2">
+        <a class="more" href="https://www.linkedin.com/in/edwinhuwae/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="more" href="https://github.com/richhuwae" target="_blank" rel="noopener">GitHub</a>
+        <a class="more" href="assets/ERH_Resume.pdf" download>CV (PDF)</a>
+      </div>
+    </div>
+    <footer class="foot"><span>Edwin Richard Huwae</span><span>Paris, France</span></footer>
   </section>
 
 </main>
+</div>
 
-<footer class="footer">
-  <span>Edwin Richard Huwae</span>
-  <span>Paris, France</span>
-</footer>
+<script>
+// Menu pill follows the section in view
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav__links a'));
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      links.forEach(function (a) { a.classList.remove('is-active'); });
+      var a = map[e.target.id];
+      if (a) a.classList.add('is-active');
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  ['top', 'work', 'approach', 'experience', 'education', 'contact'].forEach(function (id) {
+    var el = document.getElementById(id); if (el) io.observe(el);
+  });
+})();
 
+// Pause control for the moving tools list
+(function () {
+  var m = document.getElementById('marquee'), b = document.getElementById('marqueeBtn');
+  if (!m || !b) return;
+  b.addEventListener('click', function () {
+    var paused = m.classList.toggle('is-paused');
+    b.textContent = paused ? '▶' : 'II';
+    b.setAttribute('aria-label', paused ? 'Play the scrolling list' : 'Pause the scrolling list');
+  });
+  m.addEventListener('mouseenter', function () { m.classList.add('is-paused'); });
+  m.addEventListener('mouseleave', function () { if (b.textContent === 'II') m.classList.remove('is-paused'); });
+})();
+
+// Copy email
+(function () {
+  var btn = document.getElementById('copyBtn'), email = document.getElementById('email');
+  if (!btn || !email) return;
+  btn.addEventListener('click', function () {
+    var text = email.textContent;
+    function done() { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy email'; }, 1600); }
+    function select() { var r = document.createRange(); r.selectNodeContents(email); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Selected, press Ctrl+C'; }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, select);
+    } else { select(); }
+  });
+})();
+</script>
 </body>
 </html>

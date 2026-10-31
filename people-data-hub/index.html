@@ -2,169 +2,171 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>People Data Hub, a people analytics case study by Edwin Richard Huwae</title>
 <meta name="description" content="People analytics case study: a Metabase people data hub on public HR data, with written KPI definitions, a reconciled headcount, the cost of attrition and its drivers.">
 <link rel="canonical" href="https://edwinrichardhuwae.com/people-data-hub/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://edwinrichardhuwae.com/people-data-hub/">
+<meta property="og:title" content="People Data Hub, a people analytics case study">
+<meta property="og:description" content="Why people leave, what it costs and what to do first, built in Metabase on public HR data.">
+<meta name="theme-color" content="#ECEEEC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1211" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="../assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css?v=5">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css?v=6">
 
 <!-- Simple Analytics -->
 <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
 </head>
 <body>
+<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
 
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
 
-<header class="masthead">
-  <a class="masthead__mark" href="../" aria-label="Edwin Richard Huwae, home">
-    <span aria-hidden="true">E</span>
-    <span aria-hidden="true">R</span>
-    <span aria-hidden="true">H</span>
-  </a>
-  <nav class="ledger-tabs" aria-label="Case study navigation">
-    <a href="../#projects">All projects</a>
-    <a href="#dashboard">Dashboard</a>
-    <a href="#approach">Approach</a>
-    <a href="#findings">Findings</a>
-  </nav>
-</header>
+<nav class="nav" aria-label="Case study sections">
+  <div class="nav__bar">
+    <a class="nav__name" href="../">Edwin Huwae</a>
+    <div class="nav__links">
+      <a href="../#work">All projects</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#approach">Approach</a>
+      <a href="#findings">Findings</a>
+    </div>
+    <a class="pill" href="../#contact">Let's talk</a>
+  </div>
+</nav>
 
-<main id="main">
+<div class="wrap">
+<main class="frame" id="main">
 
-  <section class="hero">
-
-    <h1 class="hero__name">People Data Hub</h1>
-    <p class="hero__role">People analytics, from raw tables to recommendations</p>
-    <p class="prose case-lede">
-      The brief I set myself: you are the HR lead of a ~200-person company. Why are people
-      leaving, what is it costing, and what should you do first? I answered it the way I
-      build people data at work: define the KPIs, clean the data once, prove the numbers
-      reconcile, then build the dashboard.
-    </p>
-
-    <div class="hero__actions">
-      <a class="btn btn--primary" href="#dashboard">See the dashboard</a>
-      <a class="btn btn--outline" href="#findings">Jump to findings</a>
+  <section class="band hero" id="top">
+    <div class="band__inner">
+      <p class="hero__who rise">Case study, people analytics</p>
+      <h1 class="rise rise-1">People Data Hub</h1>
+      <p class="hero__sub rise rise-2">The brief I set myself: you are the HR lead of a ~200-person company. Why are people leaving, what is it costing, and what should you do first?</p>
+      <div class="hero__actions rise rise-2">
+        <a class="pill" href="#dashboard">See the dashboard <span class="arrow arrow--down" aria-hidden="true">↓</span></a>
+        <a class="pill pill--ghost" href="#findings">Jump to findings</a>
+      </div>
+    </div>
+    <div class="facts">
+      <div class="fact"><div class="fact__num">310</div><p class="fact__label">employees, 2006 to April 2017, from a public HR dataset</p></div>
+      <div class="fact"><div class="fact__num">136/136</div><p class="fact__label">months where my rebuilt headcount matches the source</p></div>
+      <div class="fact"><div class="fact__num">7</div><p class="fact__label">dashboard tabs, from executive summary to data notes</p></div>
     </div>
   </section>
 
-  <section class="section section--wide" id="dashboard">
-    <div class="section-head">
-      <h2 class="section-head__title">Live dashboard</h2>
-    </div>
-    <p class="prose prose--muted">
-      Seven tabs: Executive summary, Workforce, Attrition, Cost of attrition, Hiring quality,
-      Attrition drivers and Data notes. Use the filters above the charts to drill in; it is
-      read-only, so nothing you click changes the data.
-    </p>
-
-    <div class="embed">
-      <iframe src="https://demo.edwinrichardhuwae.com/public/dashboard/7fadd7aa-3a7d-46fb-a25d-7f5959a9e72b#bordered=false&amp;titled=false" title="People Data Hub dashboard" loading="lazy"></iframe>
-    </div>
-    <p class="embed__fallback">
-      <a href="https://demo.edwinrichardhuwae.com/public/dashboard/7fadd7aa-3a7d-46fb-a25d-7f5959a9e72b" target="_blank" rel="noopener">Open the dashboard full screen</a>
-      <span>The first load can take a few seconds while the server wakes up.</span>
-    </p>
-  </section>
-
-  <section class="section" id="approach">
-    <div class="section-head">
-      <h2 class="section-head__title">Approach</h2>
-    </div>
-
-    <div class="ledger-table ledger-table--steps" aria-label="Approach, step by step">
-      <div class="ledger-row ledger-row--head">
-        <span>Step</span><span>What I did</span>
+  <section class="band" id="dashboard">
+    <div class="band__inner">
+      <div class="head rise">
+        <div>
+          <h2>Live dashboard</h2>
+          <p>Use the filters above the charts to drill in. It is read-only, so nothing you click changes the data.</p>
+        </div>
+        <a class="more" href="https://demo.edwinrichardhuwae.com/public/dashboard/7fadd7aa-3a7d-46fb-a25d-7f5959a9e72b" target="_blank" rel="noopener">Open full screen <span class="arrow" aria-hidden="true">→</span></a>
       </div>
-      <div class="ledger-row">
-        <span>1. Define the KPIs</span>
-        <span>Wrote down headcount, attrition, regrettable and early exits, 12-month retention and cost of attrition before building anything, so every chart uses the same definition.</span>
+      <div class="embed rise">
+        <iframe src="https://demo.edwinrichardhuwae.com/public/dashboard/7fadd7aa-3a7d-46fb-a25d-7f5959a9e72b#bordered=false&amp;titled=false" title="People Data Hub dashboard" loading="lazy"></iframe>
       </div>
-      <div class="ledger-row">
-        <span>2. Clean once</span>
-        <span>Built three SQL models in Metabase as the single source of truth: trimmed labels, fixed typos, classified exits, flagged a conflicting record. The raw tables are never edited.</span>
-      </div>
-      <div class="ledger-row">
-        <span>3. Reconcile</span>
-        <span>Rebuilt monthly headcount from individual records and compared it to the source's own table: it matches at month end in 136 of 136 months, which pins down an undocumented definition.</span>
-      </div>
-      <div class="ledger-row">
-        <span>4. Set the rules</span>
-        <span>Group sizes on every rate, rates hidden below 20 people, confidence intervals on risk drivers, managers anonymised and no group under 5 people singled out.</span>
-      </div>
-      <div class="ledger-row">
-        <span>5. Answer, then show</span>
-        <span>An executive summary leads with the cost and four findings; the other tabs hold the evidence, with filters to drill in.</span>
-      </div>
+      <p class="embed__note">The first load can take a few seconds while the server wakes up.</p>
     </div>
   </section>
 
-  <section class="section" id="findings">
-    <div class="section-head">
-      <h2 class="section-head__title">Findings</h2>
+  <section class="band" id="approach">
+    <div class="band__inner">
+      <div class="head rise">
+        <div>
+          <h2>Approach</h2>
+          <p>The way I build people data at work, in three steps.</p>
+        </div>
+      </div>
     </div>
-
-    <div class="stat-row stat-row--case">
-      <div class="stat"><span class="stat__value">$285k</span><span class="stat__label">yearly cost of attrition, about 2% of payroll (at a 30% replacement-cost assumption)</span></div>
-      <div class="stat"><span class="stat__value">13.5%</span><span class="stat__label">attrition in Production vs 7.5% in the rest of the company; closing the gap is worth ~$84k a year</span></div>
-      <div class="stat"><span class="stat__value">31%</span><span class="stat__label">of leavers quit within their first year</span></div>
-      <div class="stat"><span class="stat__value">51%</span><span class="stat__label">of the 2011 hiring wave still employed after 3 years, against 82 to 89% for later cohorts</span></div>
+    <div class="cells">
+      <div class="cell rise"><div class="cell__top"><span>01</span><span>Define</span></div><h3>KPIs first</h3><p>Headcount, attrition, regrettable and early exits, 12-month retention and cost of attrition, written down before any chart, so every tab uses the same definition.</p></div>
+      <div class="cell rise rise-1"><div class="cell__top"><span>02</span><span>Clean, reconcile</span></div><h3>One source of truth</h3><p>Three SQL models fix labels, classify exits and flag a conflicting record. The rebuilt headcount matches the source's own table at month end in every month.</p></div>
+      <div class="cell rise rise-2"><div class="cell__top"><span>03</span><span>Answer</span></div><h3>Lead with the cost</h3><p>An executive summary opens with the cost and four findings. Group sizes on every rate, rates hidden below 20 people, managers anonymised.</p></div>
     </div>
-
-    <p class="prose case-subhead"><strong>What I would recommend</strong></p>
-    <ol class="prose case-list">
-      <li><strong>Production retention review:</strong> stay interviews, shift patterns and pay versus market for technician roles, targeting the rest-of-company rate.</li>
-      <li><strong>Structured onboarding:</strong> 30/60/90-day check-ins, with 12-month retention tracked by hiring cohort.</li>
-      <li><strong>Manager support:</strong> start with the three teams that lost more than half of everyone they managed.</li>
-      <li><strong>Data hygiene:</strong> adopt end-of-month headcount as the official definition and block conflicting records at entry.</li>
-    </ol>
-
-    <p class="prose prose--muted">
-      A separate public sample (IBM HR Analytics, 1,470 employees) shows the risk drivers:
-      people working overtime were <strong>2.9×</strong> as likely to leave (95% confidence interval 2.3 to 3.7).
-    </p>
   </section>
 
-  <section class="section" id="notes">
-    <div class="section-head">
-      <h2 class="section-head__title">Data &amp; caveats</h2>
+  <section class="band" id="findings">
+    <div class="dark-wrap">
+      <div class="dark rise">
+        <div class="head">
+          <div>
+            <h2>Findings</h2>
+            <p>At a 30% replacement-cost assumption, averaged over 2011 to 2016.</p>
+          </div>
+        </div>
+        <div class="roles">
+          <div class="role"><span class="role__when">$285k a year</span><h3>What attrition costs<span>About 2% of payroll</span></h3><p>101 people left in six years; each exit means recruiting, onboarding and lost output.</p></div>
+          <div class="role"><span class="role__when">13.5% vs 7.5%</span><h3>Production drives it<span>81 of 101 exits</span></h3><p>Bringing Production down to the rest of the company's rate is worth about $84k a year.</p></div>
+          <div class="role"><span class="role__when">31%</span><h3>Early exits<span>Left within the first year</span></h3><p>Recruiting spend that never pays back; cutting it by a quarter saves about $22k a year.</p></div>
+          <div class="role"><span class="role__when">51%</span><h3>The 2011 hiring wave<span>Still employed after 3 years</span></h3><p>Against 82 to 89% for later cohorts: fast hiring brought fast leaving.</p></div>
+        </div>
+      </div>
     </div>
-    <p class="prose prose--muted">
-      Built with SQL, Metabase and PostgreSQL on Azure. All data is public sample data
-      about fictional people; no employer's data is used.
-      The company dataset covers 310 employees, 2006 to April 2017. Cost figures depend on
-      the replacement-cost assumption, which viewers can change on the dashboard. Findings
-      are associations, not proof of cause.
-    </p>
   </section>
 
-  <section class="section section--contact" id="contact">
-    <div class="section-head">
-      <h2 class="section-head__title">Want the walkthrough?</h2>
+  <section class="band" aria-labelledby="recs-h">
+    <div class="band__inner">
+      <div class="head rise"><div><h2 id="recs-h">What I would recommend</h2></div></div>
+      <ul class="recs">
+        <li class="rise"><strong>Production retention review</strong>Stay interviews, shift patterns and pay versus market for technician roles, targeting the rest-of-company rate.</li>
+        <li class="rise rise-1"><strong>Structured onboarding</strong>30, 60 and 90-day check-ins, with 12-month retention tracked by hiring cohort.</li>
+        <li class="rise"><strong>Manager support</strong>Start with the three teams that lost more than half of everyone they managed.</li>
+        <li class="rise rise-1"><strong>Data hygiene</strong>Adopt end-of-month headcount as the official definition and block conflicting records at entry.</li>
+      </ul>
+      <p class="note rise" style="margin-top: 40px;">A separate public sample (IBM HR Analytics, 1,470 employees) shows the risk drivers: people working overtime were 2.9 times as likely to leave (95% confidence interval 2.3 to 3.7).</p>
     </div>
-    <p class="prose">
-      I'm happy to talk through the SQL, the definitions and the trade-offs behind any chart.
-    </p>
-    <div class="hero__actions">
-      <a class="btn btn--primary" href="mailto:edwinrichardhuwae@gmail.com">Send email</a>
-      <a class="btn btn--outline" href="../">Back to home</a>
+  </section>
+
+  <section class="band" aria-labelledby="notes-h">
+    <div class="band__inner">
+      <div class="head rise"><div><h2 id="notes-h">Data and caveats</h2></div></div>
+      <p class="note rise">Built with SQL, Metabase and PostgreSQL on Azure. All data is public sample data about fictional people; no employer's data is used. Cost figures depend on the replacement-cost assumption, which viewers can change on the dashboard. Findings are associations, not proof of cause.</p>
     </div>
+  </section>
+
+  <section class="band contact" id="contact">
+    <div class="band__inner">
+      <h2 class="rise">Want the walkthrough?</h2>
+      <p class="hero__sub rise rise-1">I'm happy to talk through the SQL, the definitions and the trade-offs behind any chart.</p>
+      <div class="hero__actions rise rise-2">
+        <a class="pill" href="mailto:edwinrichardhuwae@gmail.com">Email me</a>
+        <a class="pill pill--ghost" href="../">Back to home</a>
+      </div>
+    </div>
+    <footer class="foot"><span>Edwin Richard Huwae</span><span>Paris, France</span></footer>
   </section>
 
 </main>
+</div>
 
-<footer class="footer">
-  <span>Edwin Richard Huwae</span>
-  <span>Paris, France</span>
-</footer>
-
+<script>
+// Menu pill follows the section in view
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav__links a[href^="#"]'));
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      links.forEach(function (a) { a.classList.remove('is-active'); });
+      var a = map[e.target.id];
+      if (a) a.classList.add('is-active');
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  ['top', 'dashboard', 'approach', 'findings', 'contact'].forEach(function (id) {
+    var el = document.getElementById(id); if (el) io.observe(el);
+  });
+})();
+</script>
 </body>
 </html>
