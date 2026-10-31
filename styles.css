@@ -15,6 +15,7 @@
   --dark-ink: #EEF2EF;
   --dark-soft: #A5AFA8;
   --dark-line: #2C332F;
+  --plus: #A3ABA5;
 
   --display: 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif;
   --body: 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif;
@@ -28,6 +29,7 @@
   :root {
     --canvas: #0F1211; --panel: #181D1A; --ink: #EEF2EF; --ink-soft: #B4BDB7; --ink-faint: #8E978F;
     --line: #262D29; --accent: #5FCB8E; --dark: #050706; --dark-ink: #EEF2EF; --dark-soft: #9AA59E; --dark-line: #1E2421;
+    --plus: #4A544E;
     color-scheme: dark;
   }
 }
@@ -68,14 +70,30 @@ p { margin: 0; }
   border-right: 1px solid var(--line);
 }
 
-/* a band is one block; its top edge is a full-width guide with "+" marks */
+/* a band is one block; its top edge is a full-width guide with "+" marks.
+   A mark is a thin cross centred on the crossing, on a small patch of canvas
+   so the guide lines stop just short of it. */
 .band { position: relative; border-top: 1px solid var(--line); }
-.band::before, .band::after {
-  content: "+"; position: absolute; top: -0.78em; z-index: 2;
-  font: 300 22px/1 var(--body); color: var(--ink-faint);
+.band::before, .band::after,
+.cells > .cell + .cell::before, .cells > .cell + .cell::after,
+.facts > .fact + .fact::before, .facts > .fact + .fact::after {
+  content: ""; position: absolute; z-index: 2;
+  width: 23px; height: 23px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  background:
+    linear-gradient(var(--plus), var(--plus)) center / 15px 1.5px no-repeat,
+    linear-gradient(var(--plus), var(--plus)) center / 1.5px 15px no-repeat,
+    var(--canvas);
 }
-.band::before { left: -0.33em; }
-.band::after { right: -0.33em; }
+.band::before { top: -0.5px; left: -0.5px; }
+.band::after { top: -0.5px; left: calc(100% + 0.5px); }
+.hero::before, .hero::after { display: none; }
+
+/* inner column lines meet the row lines above and below them */
+.cell, .fact { position: relative; }
+.cells > .cell + .cell::before, .facts > .fact + .fact::before { top: -0.5px; left: -0.5px; }
+.cells > .cell + .cell::after, .facts > .fact + .fact::after { top: calc(100% + 0.5px); left: -0.5px; }
 .band__inner { padding: 88px clamp(20px, 5vw, 72px); }
 
 /* ---------- nav ---------- */
@@ -282,6 +300,8 @@ a:hover .arrow--down { transform: translateY(2px); }
   .facts, .facts--four, .cells, .recs { grid-template-columns: minmax(0, 1fr); }
   .fact, .cell { border-left: none; border-top: 1px solid var(--line); }
   .fact:first-child, .cell:first-child { border-top: none; }
+  .cells > .cell + .cell::before, .cells > .cell + .cell::after,
+  .facts > .fact + .fact::before, .facts > .fact + .fact::after { display: none; }
   .card { grid-template-columns: minmax(0, 1fr); min-height: 0; }
   .card__art { min-height: 200px; }
   .card:nth-child(n) { top: 92px; }
