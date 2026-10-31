@@ -94,7 +94,7 @@ p { margin: 0; }
 .nav__bar::after { top: calc(100% + 0.5px); left: calc(100% + 0.5px); transition: opacity .3s ease; }
 
 /* row guides run to the edges of the screen, as on a drawing sheet */
-.band, .facts, .cells, .foot {
+.band, .facts, .cells, .certs-row, .foot {
   border-image: linear-gradient(var(--line), var(--line)) 1 / 1px 0 0 0 / 0 100vmax;
 }
 .hero { border-image: none; }
@@ -290,8 +290,14 @@ a:hover .arrow--down { transform: translateY(2px); }
 .quote figcaption strong { display: block; color: var(--ink); font-weight: 600; }
 
 /* ---------- certificates ---------- */
+/* certificates get their own row in the grid, laid out like the tools row */
+.certs-row {
+  display: grid; grid-template-columns: max-content minmax(0, 1fr); align-items: center; gap: 40px;
+  padding: 36px clamp(20px, 5vw, 72px) 44px;
+  border-top: 1px solid var(--line);
+}
 .certs { display: flex; flex-wrap: wrap; gap: 10px; }
-.certs a { text-decoration: none; padding: 10px 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); font-size: 0.95rem; font-weight: 500; }
+.certs a { text-decoration: none; padding: 9px 15px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); font-size: 0.95rem; font-weight: 500; }
 .certs a:hover { border-color: var(--ink); }
 
 /* ---------- contact ---------- */
@@ -345,6 +351,7 @@ a:hover .arrow--down { transform: translateY(2px); }
   .role { grid-template-columns: minmax(0, 1fr); gap: 8px; }
   .quotes { grid-template-columns: minmax(0, 1fr); }
   .tools { grid-template-columns: minmax(0, 1fr) auto; }
+  .certs-row { grid-template-columns: minmax(0, 1fr); gap: 16px; }
   .tools__label { grid-column: 1 / -1; }
   .band__inner { padding-top: 64px; padding-bottom: 64px; }
   .embed iframe { height: 760px; }
