@@ -75,6 +75,7 @@ p { margin: 0; }
    so the guide lines stop just short of it. */
 .band { position: relative; border-top: 1px solid var(--line); }
 .band::before, .band::after,
+.nav__bar::before, .nav__bar::after,
 .cells > .cell + .cell::before, .cells > .cell + .cell::after,
 .facts > .fact + .fact::before, .facts > .fact + .fact::after {
   content: ""; position: absolute; z-index: 2;
@@ -89,6 +90,14 @@ p { margin: 0; }
 .band::before { top: -0.5px; left: -0.5px; }
 .band::after { top: -0.5px; left: calc(100% + 0.5px); }
 .hero::before, .hero::after { display: none; }
+.nav__bar::before { top: calc(100% + 0.5px); left: -0.5px; transition: opacity .3s ease; }
+.nav__bar::after { top: calc(100% + 0.5px); left: calc(100% + 0.5px); transition: opacity .3s ease; }
+
+/* row guides run to the edges of the screen, as on a drawing sheet */
+.band, .facts, .cells, .foot {
+  border-image: linear-gradient(var(--line), var(--line)) 1 / 1px 0 0 0 / 0 100vmax;
+}
+.hero { border-image: none; }
 
 /* inner column lines meet the row lines above and below them */
 .cell, .fact { position: relative; }
@@ -96,31 +105,58 @@ p { margin: 0; }
 .cells > .cell + .cell::after, .facts > .fact + .fact::after { top: calc(100% + 0.5px); left: -0.5px; }
 .band__inner { padding: 88px clamp(20px, 5vw, 72px); }
 
-/* ---------- nav ---------- */
+/* ---------- nav ----------
+   At the top of the page the menu is the first row of the grid: flat on the
+   canvas, inside the frame lines, with a full-width guide and crosses below.
+   Once the page scrolls, script adds .is-floating and it becomes a white pill.
+   The outer .nav keeps a fixed height, so the change never moves the page. */
 .nav {
-  position: sticky; top: calc(env(safe-area-inset-top, 0px) + 14px); z-index: 20;
-  max-width: var(--col); margin: 14px auto 0;
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  height: 88px;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
 }
+.nav::after {
+  content: ""; position: absolute; bottom: 0; left: 50%; width: 100vw; margin-left: -50vw;
+  height: 1px; background: var(--line);
+  transition: opacity .3s ease;
+}
 .nav__bar {
+  position: relative;
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
-  padding: 10px 10px 10px 26px;
-  background: color-mix(in srgb, var(--panel) 88%, transparent);
+  max-width: calc(var(--col) + 2px); height: 88px; margin: 0 auto;
+  padding: 0 14px 0 clamp(20px, 3vw, 34px);
+  background: var(--canvas);
+  border: 1px solid transparent;
+  border-left-color: var(--line); border-right-color: var(--line);
+  border-radius: 0;
+  transition: max-width .35s ease, height .35s ease, margin-top .35s ease, border-radius .35s ease,
+              background-color .35s ease, border-color .35s ease, box-shadow .35s ease, padding .35s ease;
+}
+.nav.is-floating::after { opacity: 0; }
+.nav.is-floating .nav__bar {
+  max-width: var(--col); height: 68px; margin-top: 10px;
+  padding: 0 10px 0 26px;
+  background: color-mix(in srgb, var(--panel) 90%, transparent);
   backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-  border: 1px solid var(--line);
+  border-color: var(--line);
   border-radius: 999px;
-  box-shadow: 0 8px 30px -18px rgba(0, 0, 0, .35);
+  box-shadow: 0 10px 30px -18px rgba(0, 0, 0, .35);
 }
-.nav__name { font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; text-decoration: none; white-space: nowrap; }
-.nav__links { display: flex; gap: 4px; }
+.nav.is-floating .nav__bar::before, .nav.is-floating .nav__bar::after { opacity: 0; }
+.nav__name { font-weight: 700; font-size: 1.2rem; letter-spacing: -0.02em; text-decoration: none; white-space: nowrap; }
+.nav__links { display: flex; gap: 6px; }
 .nav__links a {
-  text-decoration: none; font-weight: 500; font-size: 0.96rem; color: var(--ink-soft);
-  padding: 9px 16px; border-radius: 999px; border: 1px solid transparent;
-  transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+  text-decoration: none; font-weight: 500; font-size: 1.04rem; color: var(--ink);
+  padding: 10px 18px; border-radius: 999px; border: 1px solid transparent;
+  transition: background-color .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
-.nav__links a:hover { color: var(--ink); }
-.nav__links a.is-active { background: var(--canvas); color: var(--ink); border-color: var(--line); }
+.nav__links a:hover { background: color-mix(in srgb, var(--panel) 60%, transparent); }
+.nav__links a.is-active {
+  background: var(--panel);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .06), 0 6px 16px -8px rgba(0, 0, 0, .25);
+}
+.nav.is-floating .nav__links a.is-active { background: var(--canvas); border-color: var(--line); box-shadow: none; }
 
 .pill {
   display: inline-flex; align-items: center; gap: 10px;
@@ -290,13 +326,14 @@ a:hover .arrow--down { transform: translateY(2px); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .marquee__track { animation: none; }
-  .pill, .arrow, .nav__links a { transition: none; }
+  .pill, .arrow, .nav__links a, .nav__bar, .nav::after { transition: none; }
 }
 
 /* ---------- small screens ---------- */
 @media (max-width: 880px) {
   .nav__links { display: none; }
   .nav__bar { padding-left: 20px; }
+  .nav.is-floating .nav__bar { padding-left: 20px; }
   .facts, .facts--four, .cells, .recs { grid-template-columns: minmax(0, 1fr); }
   .fact, .cell { border-left: none; border-top: 1px solid var(--line); }
   .fact:first-child, .cell:first-child { border-top: none; }
