@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>People Data Hub — Edwin Richard Huwae</title>
+<meta name="description" content="People analytics case study: a Metabase people data hub on public HR data, with written KPI definitions, a reconciled headcount, the cost of attrition and its drivers.">
+<link rel="canonical" href="https://edwinrichardhuwae.com/people-data-hub/">
+<link rel="icon" href="../assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css?v=4">
+
+<!-- Simple Analytics -->
+<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <a class="masthead__mark" href="../" aria-label="Edwin Richard Huwae — home">
+    <span aria-hidden="true">E</span>
+    <span aria-hidden="true">R</span>
+    <span aria-hidden="true">H</span>
+  </a>
+  <nav class="ledger-tabs" aria-label="Case study navigation">
+    <a href="../#projects">← All projects</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#approach">Approach</a>
+    <a href="#findings">Findings</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <dl class="hero__fields">
+      <div><dt>Type</dt><dd>Portfolio case study</dd></div>
+      <div><dt>Tools</dt><dd>SQL · Metabase · PostgreSQL on Azure</dd></div>
+      <div><dt>Data</dt><dd>Public HR samples, fictional people</dd></div>
+    </dl>
+
+    <h1 class="hero__name">People Data Hub</h1>
+    <p class="hero__role">People analytics, from raw tables to recommendations</p>
+    <p class="prose case-lede">
+      The brief I set myself: you are the HR lead of a ~200-person company. Why are people
+      leaving, what is it costing, and what should you do first? I answered it the way I
+      build people data at work: define the KPIs, clean the data once, prove the numbers
+      reconcile, then build the dashboard.
+    </p>
+
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="#dashboard">See the dashboard</a>
+      <a class="btn btn--outline" href="#findings">Jump to findings</a>
+    </div>
+  </section>
+
+  <section class="section section--wide" id="dashboard">
+    <div class="section-head">
+      <span class="section-head__mark">§ 1</span>
+      <h2 class="section-head__title">Live dashboard</h2>
+    </div>
+    <p class="prose prose--muted">
+      Seven tabs: Executive summary, Workforce, Attrition, Cost of attrition, Hiring quality,
+      Attrition drivers and Data notes. Every filter works on every chart. Read-only; nothing
+      you click changes the data.
+    </p>
+
+    <div class="embed embed--pending" role="note">
+      <p class="embed__msg">Live dashboard coming soon.</p>
+      <p class="embed__sub">It is being published from Metabase. Until then, the approach and findings are below.</p>
+    </div>
+    <!-- When the public link exists, replace the div above with:
+    <div class="embed">
+      <iframe src="PUBLIC_EMBED_URL#bordered=false&titled=false" title="People Data Hub dashboard" loading="lazy"></iframe>
+    </div>
+    <p class="embed__fallback"><a href="PUBLIC_DASHBOARD_URL" target="_blank" rel="noopener">Open the dashboard full screen ↗</a></p>
+    -->
+  </section>
+
+  <section class="section" id="approach">
+    <div class="section-head">
+      <span class="section-head__mark">§ 2</span>
+      <h2 class="section-head__title">Approach</h2>
+    </div>
+
+    <div class="ledger-table ledger-table--steps" aria-label="Approach, step by step">
+      <div class="ledger-row ledger-row--head">
+        <span>Step</span><span>What I did</span>
+      </div>
+      <div class="ledger-row">
+        <span>1 · Define the KPIs</span>
+        <span>Wrote down headcount, attrition, regrettable and early exits, 12-month retention and cost of attrition before building anything, so every chart uses the same definition.</span>
+      </div>
+      <div class="ledger-row">
+        <span>2 · Clean once</span>
+        <span>Built three SQL models in Metabase as the single source of truth: trimmed labels, fixed typos, classified exits, flagged a conflicting record. The raw tables are never edited.</span>
+      </div>
+      <div class="ledger-row">
+        <span>3 · Reconcile</span>
+        <span>Rebuilt monthly headcount from individual records and compared it to the source's own table: it matches at month end in 136 of 136 months, which pins down an undocumented definition.</span>
+      </div>
+      <div class="ledger-row">
+        <span>4 · Set the rules</span>
+        <span>Group sizes on every rate, rates hidden below 20 people, confidence intervals on risk drivers, managers anonymised and no group under 5 people singled out.</span>
+      </div>
+      <div class="ledger-row">
+        <span>5 · Answer, then show</span>
+        <span>An executive summary leads with the cost and four findings; the other tabs hold the evidence, with filters to drill in.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="findings">
+    <div class="section-head">
+      <span class="section-head__mark">§ 3</span>
+      <h2 class="section-head__title">Findings</h2>
+    </div>
+
+    <div class="stat-row stat-row--case">
+      <div class="stat"><span class="stat__value">$285k</span><span class="stat__label">yearly cost of attrition, about 2% of payroll (at a 30% replacement-cost assumption)</span></div>
+      <div class="stat"><span class="stat__value">13.5%</span><span class="stat__label">attrition in Production vs 7.5% in the rest of the company; closing the gap is worth ~$84k a year</span></div>
+      <div class="stat"><span class="stat__value">31%</span><span class="stat__label">of leavers quit within their first year</span></div>
+      <div class="stat"><span class="stat__value">51%</span><span class="stat__label">of the 2011 hiring wave still employed after 3 years, vs 82–89% for later cohorts</span></div>
+    </div>
+
+    <p class="prose case-subhead"><strong>What I would recommend</strong></p>
+    <ol class="prose case-list">
+      <li><strong>Production retention review:</strong> stay interviews, shift patterns and pay versus market for technician roles, targeting the rest-of-company rate.</li>
+      <li><strong>Structured onboarding:</strong> 30/60/90-day check-ins, with 12-month retention tracked by hiring cohort.</li>
+      <li><strong>Manager support:</strong> start with the three teams that lost more than half of everyone they managed.</li>
+      <li><strong>Data hygiene:</strong> adopt end-of-month headcount as the official definition and block conflicting records at entry.</li>
+    </ol>
+
+    <p class="prose prose--muted">
+      A separate public sample (IBM HR Analytics, 1,470 employees) shows the risk drivers:
+      people working overtime were <strong>2.9×</strong> as likely to leave (95% CI 2.3–3.7).
+    </p>
+  </section>
+
+  <section class="section" id="notes">
+    <div class="section-head">
+      <span class="section-head__mark">§ 4</span>
+      <h2 class="section-head__title">Data &amp; caveats</h2>
+    </div>
+    <p class="prose prose--muted">
+      All data is public sample data about fictional people; no employer's data is used.
+      The company dataset covers 310 employees, 2006 to April 2017. Cost figures depend on
+      the replacement-cost assumption, which viewers can change on the dashboard. Findings
+      are associations, not proof of cause.
+    </p>
+  </section>
+
+  <section class="section section--contact" id="contact">
+    <div class="section-head">
+      <span class="section-head__mark">§ 5</span>
+      <h2 class="section-head__title">Want the walkthrough?</h2>
+    </div>
+    <p class="prose">
+      I'm happy to talk through the SQL, the definitions and the trade-offs behind any chart.
+    </p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="mailto:edwinrichardhuwae@gmail.com">Send email</a>
+      <a class="btn btn--outline" href="../">Back to home</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <span>Edwin Richard Huwae</span>
+  <span>Paris, France</span>
+</footer>
+
+</body>
+</html>
