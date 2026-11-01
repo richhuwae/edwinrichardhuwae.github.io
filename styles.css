@@ -191,7 +191,7 @@ a:hover .arrow--down { transform: translateY(2px); }
 .fact__label { margin-top: 10px; color: var(--ink-soft); font-size: 0.98rem; }
 
 /* ---------- tools marquee ---------- */
-.tools { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr) auto; align-items: center; gap: 24px; padding: 30px clamp(20px, 5vw, 72px); }
+.tools { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); align-items: center; gap: 24px; padding: 30px clamp(20px, 5vw, 72px); }
 .tools__label { color: var(--ink-soft); font-size: 0.98rem; }
 .marquee {
   overflow: hidden;
@@ -199,13 +199,11 @@ a:hover .arrow--down { transform: translateY(2px); }
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
 .marquee__track { display: flex; gap: 48px; width: max-content; animation: slide 32s linear infinite; }
-.marquee__track span { font-weight: 600; font-size: 1.35rem; letter-spacing: -0.02em; white-space: nowrap; color: var(--ink); }
-.marquee.is-paused .marquee__track { animation-play-state: paused; }
+.marquee__track .tool { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; font-size: 1.35rem; letter-spacing: -0.02em; white-space: nowrap; color: var(--ink); }
+.tool svg { width: 1.15em; height: 1.15em; flex: none; fill: currentColor; }
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.marquee:hover .marquee__track { animation-play-state: paused; }
 @keyframes slide { to { transform: translateX(-50%); } }
-.icon-btn {
-  width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line);
-  background: var(--panel); color: var(--ink); cursor: pointer; font: 600 13px/1 var(--body);
-}
 
 /* ---------- section heads ---------- */
 .head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: 48px; }
@@ -350,9 +348,8 @@ a:hover .arrow--down { transform: translateY(2px); }
   .card:nth-child(n) { top: 92px; }
   .role { grid-template-columns: minmax(0, 1fr); gap: 8px; }
   .quotes { grid-template-columns: minmax(0, 1fr); }
-  .tools { grid-template-columns: minmax(0, 1fr) auto; }
+  .tools { grid-template-columns: minmax(0, 1fr); }
   .certs-row { grid-template-columns: minmax(0, 1fr); gap: 16px; }
-  .tools__label { grid-column: 1 / -1; }
   .band__inner { padding-top: 64px; padding-bottom: 64px; }
   .embed iframe { height: 760px; }
 }
