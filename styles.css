@@ -290,13 +290,14 @@ a:hover .arrow--down { transform: translateY(2px); }
 /* ---------- certificates ---------- */
 /* certificates get their own row in the grid, laid out like the tools row */
 .certs-row {
-  display: grid; grid-template-columns: max-content minmax(0, 1fr); align-items: center; gap: 40px;
+  display: grid; grid-template-columns: max-content minmax(0, 1fr); align-items: center; gap: 32px;
   padding: 36px clamp(20px, 5vw, 72px) 44px;
   border-top: 1px solid var(--line);
 }
-.certs { display: flex; flex-wrap: wrap; gap: 10px; }
-.certs a { text-decoration: none; padding: 9px 15px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); font-size: 0.95rem; font-weight: 500; }
+.certs { display: flex; flex-wrap: wrap; gap: 6px; }
+.certs a { display: inline-flex; align-items: center; gap: 6px; text-decoration: none; padding: 9px 11px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); font-size: 0.9rem; font-weight: 500; }
 .certs a:hover { border-color: var(--ink); }
+.certs svg { width: 1.05em; height: 1.05em; flex: none; fill: currentColor; }
 
 /* ---------- contact ---------- */
 .contact h2 { font-size: clamp(3rem, 9vw, 7.5rem); line-height: .92; font-weight: 700; letter-spacing: -0.05em; max-width: 10ch; }
