@@ -35,7 +35,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 110px; overflow-x: clip; }
+html { scroll-behavior: smooth; scroll-padding-top: 87px; overflow-x: clip; } /* a menu link puts the section line on the menu's bottom guide (.nav is 88px) */
 body {
   margin: 0;
   background: var(--canvas);
@@ -113,6 +113,10 @@ p { margin: 0; }
 .nav {
   position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
   height: 88px;
+  /* Keeps the floating bar's top margin inside the menu. Without it the margin
+     collapses through and shifts the whole page 10px when the menu starts
+     floating, so a menu link clicked from the top landed 10px short. */
+  display: flow-root;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
 }
@@ -133,7 +137,17 @@ p { margin: 0; }
   transition: max-width .35s ease, height .35s ease, margin-top .35s ease, border-radius .35s ease,
               background-color .35s ease, border-color .35s ease, box-shadow .35s ease, padding .35s ease;
 }
-.nav.is-floating::after { opacity: 0; }
+/* While floating, the menu area is a solid band in the page colour with the
+   frame's side lines and its bottom guide, so nothing shows above a section
+   that a menu link scrolled to. */
+.nav { transition: background-color .3s ease; }
+.nav::before {
+  content: ""; position: absolute; top: 0; bottom: 0; pointer-events: none;
+  left: max(16px, calc((100% - var(--col) - 2px) / 2));
+  right: max(16px, calc((100% - var(--col) - 2px) / 2));
+  border-left: 1px solid var(--line); border-right: 1px solid var(--line);
+}
+.nav.is-floating { background: var(--canvas); }
 .nav.is-floating .nav__bar {
   max-width: var(--col); height: 68px; margin-top: 10px;
   padding: 0 10px 0 26px;
