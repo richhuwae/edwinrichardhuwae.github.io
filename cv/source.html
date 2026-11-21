@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--
+  Source of assets/ERH_Resume.pdf (the CV linked from the website).
+  Edit this file, then print it to A4 PDF with Chromium (no margins set by the
+  browser; the page sets its own) and save the result as assets/ERH_Resume.pdf.
+  This is the general web version: no phone number. Tailored CVs live in Google Docs.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<title>Edwin Richard Huwae, CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&display=block" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 10mm 14mm 9mm; }
+  :root { --ink: #111513; --soft: #3F4742; --faint: #636C66; --line: #C9CFCA; --accent: #1B6E42; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif; color: var(--ink); font-size: 9.1pt; line-height: 1.33; }
+  a { color: inherit; text-decoration: none; }
+  a.u { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 2px; }
+
+  header { display: flex; justify-content: space-between; align-items: flex-end; gap: 8mm; padding-bottom: 3.2mm; border-bottom: 1.4pt solid var(--ink); }
+  h1 { font-size: 20pt; white-space: nowrap; line-height: 1; font-weight: 700; letter-spacing: -0.03em; }
+  .role { margin-top: 1.6mm; font-size: 10.5pt; font-weight: 500; color: var(--accent); }
+  .contact { text-align: right; font-size: 8.4pt; line-height: 1.5; color: var(--soft); }
+
+  section { margin-top: 3mm; }
+  h2 { font-size: 8.4pt; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); padding-bottom: 1.2mm; border-bottom: 0.6pt solid var(--line); margin-bottom: 2.2mm; }
+  p { color: var(--soft); }
+
+  .job { margin-top: 2.2mm; }
+  .job:first-of-type { margin-top: 0; }
+  .job__top { display: flex; justify-content: space-between; align-items: baseline; gap: 6mm; }
+  .job__org { font-weight: 700; font-size: 10.2pt; }
+  .job__org span { font-weight: 400; color: var(--faint); }
+  .job__when { font-size: 8.8pt; color: var(--faint); white-space: nowrap; }
+  .job__title { font-style: italic; color: var(--soft); margin-top: 0.3mm; }
+  ul { margin-top: 1.1mm; padding-left: 4mm; }
+  li { color: var(--soft); margin-top: 0.5mm; padding-left: 0.6mm; }
+  li::marker { color: var(--faint); }
+  strong { color: var(--ink); font-weight: 600; }
+
+  .skills { display: grid; grid-template-columns: 20mm 1fr; gap: 0.6mm 4mm; }
+  .skills dt { font-weight: 600; }
+  .skills dd { color: var(--soft); }
+
+  .proj { margin-top: 1.3mm; }
+  .proj:first-of-type { margin-top: 0; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Edwin Richard Huwae</h1>
+    <div class="role">Data &amp; BI Analyst</div>
+  </div>
+  <div class="contact">
+    Paris, France · edwinrichardhuwae@gmail.com · <a class="u" href="https://edwinrichardhuwae.com">edwinrichardhuwae.com</a><br>
+    <a class="u" href="https://linkedin.com/in/edwinhuwae">linkedin.com/in/edwinhuwae</a> · <a class="u" href="https://github.com/richhuwae">github.com/richhuwae</a>
+  </div>
+</header>
+
+<section>
+  <h2>Profile</h2>
+  <p>Data and BI analyst who turns raw data into numbers a business can trust: I define the KPIs first, build dashboards on documented SQL models and reconcile every figure against its source. Now on people data at Doctolib, after 9+ years in project finance, so I know what decision makers need from a number and what a wrong one costs. <strong>Available full-time from January 2027</strong>, in Paris or remote.</p>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <dl class="skills">
+    <dt>Data</dt><dd><strong>SQL</strong> (PostgreSQL, BigQuery, DuckDB, window functions) · <strong>Python</strong> (Pandas, NumPy, scikit-learn) · Excel / Sheets (advanced)</dd>
+    <dt>BI</dt><dd><strong>Metabase</strong> · <strong>Power BI</strong> (DAX, Power Query) · Tableau · Looker Studio</dd>
+    <dt>Methods</dt><dd>KPI definition · data modelling and reconciliation · forecasting and churn models · budgeting and variance analysis</dd>
+    <dt>Domains</dt><dd>People and workforce analytics · finance and project control · customer and subscription analytics</dd>
+  </dl>
+</section>
+
+<section>
+  <h2>Experience</h2>
+
+  <div class="job">
+    <div class="job__top"><div class="job__org">Doctolib <span>· Levallois-Perret, France</span></div><div class="job__when">Jul. 2026 – Dec. 2026</div></div>
+    <div class="job__title">People Strategy Business Analyst Intern</div>
+    <ul>
+      <li>Own the <strong>Metabase dashboards</strong> used by decision makers in every country Doctolib operates in: attrition, headcount, performance, diversity, talent acquisition and absence, plus country-level requests from HR business partners.</li>
+      <li>Wrote shared <strong>SQL models</strong> (window functions) for rolling 12-month headcount and regrettable / non-regrettable attrition; ad hoc analyses for leadership, such as attrition at senior levels and executive span of control.</li>
+      <li>Reconcile every figure with the HRIS before release, and work with Data Engineering (GCP) on the tables and fields behind the dashboards.</li>
+      <li>Connected Metabase to an LLM via MCP and handle recurring requests with AI agents, every result checked.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job__top"><div class="job__org">Amplitude Laser Group <span>· Pessac, France</span></div><div class="job__when">Jun. 2025 – Sep. 2025</div></div>
+    <div class="job__title">Business Intelligence Analyst Intern</div>
+    <ul>
+      <li>Delivered a self-service <strong>Looker Studio</strong> dashboard within the first month, showing the live backlog; the after-sales team used it to prioritise work.</li>
+      <li>Wrote <strong>BigQuery SQL</strong> to clean, validate and structure large datasets for reliable reporting.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job__top"><div class="job__org">Lintas Intim Group <span>· Indonesia</span></div><div class="job__when">Jul. 2015 – Aug. 2024</div></div>
+    <div class="job__title">Project Finance and Accounting Officer</div>
+    <ul>
+      <li>Tracked budgets against actual spend and physical progress on construction projects, including one worth over <strong>USD 20 million</strong>, and presented the key indicators to stakeholders.</li>
+      <li>Produced the monthly progress reports (termijn) that Indonesia's Ministry of Public Works used to approve payments on public contracts: their accuracy decided whether payments were made.</li>
+      <li>Ran payroll for project staff (sometimes over 50 people per project) alongside project budgets.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Projects</h2>
+  <p class="proj"><strong><a class="u" href="https://edwinrichardhuwae.com/workforce-attrition-review/">Workforce Attrition Review</a></strong> (Metabase, PostgreSQL): KPI definitions written before any chart, three SQL models, and a rebuilt monthly headcount that matches the source in all 136 months; a seven-tab public dashboard that puts attrition at about 2% of payroll, with an adjustable cost assumption.</p>
+  <p class="proj"><strong><a class="u" href="https://github.com/richhuwae/consumer-revenue-intelligence">Consumer Revenue Intelligence</a></strong> (Python, scikit-learn, Tableau): subscription unit economics on real Spotify data and 10,000 synthetic subscribers: LTV, CAC payback, cohort retention, price elasticity and a churn model (AUC 0.903).</p>
+  <p class="proj"><strong>1st place, CGI France × BNP Paribas Personal Finance hackathon</strong>: multi-agent AI pipeline (GPT-4o, Azure) generating synthetic customer personas, validated against 1,800+ real NPS responses.</p>
+</section>
+
+<section>
+  <h2>Education, certifications and languages</h2>
+  <div class="job">
+    <div class="job__top"><div class="job__org">KEDGE Business School, MSc Data Analytics for Business <span>· Bordeaux, France</span></div><div class="job__when">Sep. 2024 – Apr. 2027</div></div>
+    <div class="job__title">Thesis: cascading effects of supply chain disruptions (OECD input-output data, network analysis)</div>
+  </div>
+  <div class="job">
+    <div class="job__top"><div class="job__org">Universitas Terbuka, Bachelor's Degree in Management <span>· South Tangerang, Indonesia</span></div><div class="job__when">Apr. 2023</div></div>
+  </div>
+  <div style="margin-top:1.6mm"><p><strong>Certifications:</strong> <a class="u" href="https://coursera.org/share/8e03d2ec90a8ab28cc3df8e538788838">Google Data Analytics</a> · <a class="u" href="https://www.datacamp.com/certificate/SQA0011549646937">SQL Associate</a> · <a class="u" href="https://www.datacamp.com/completed/statement-of-accomplishment/track/33dfd043df80f66cfda3cd2c6209b07016cfa506">Power BI (DAX, Power Query)</a> · <a class="u" href="https://www.datacamp.com/certificate/DAA0014895709861">Data Analyst Associate</a></p>
+  <p style="margin-top:0.4mm"><strong>Languages:</strong> English (full professional) · French (B1, improving) · Indonesian (native)</p>
+</div>
+</section>
+
+
+
+</body>
+</html>
