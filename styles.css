@@ -8,7 +8,7 @@
   --panel: #FFFFFF;
   --ink: #111513;
   --ink-soft: #4A524D;
-  --ink-faint: #6F7872;
+  --ink-faint: #636C66; /* 4.7:1 on the canvas, the minimum for small text is 4.5:1 */
   --line: #D3D8D4;
   --accent: #1B6E42;
   --dark: #151917;
@@ -167,6 +167,7 @@ p { margin: 0; }
 }
 .pill:hover { transform: translateY(-1px); opacity: .9; }
 .pill--ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+.pill--sm { padding: 10px 18px; font-size: 0.92rem; gap: 8px; }
 .arrow { display: inline-block; transition: transform .2s ease; }
 a:hover .arrow { transform: translateX(3px); }
 a:hover .arrow--down { transform: translateY(2px); }
@@ -182,6 +183,10 @@ a:hover .arrow--down { transform: translateY(2px); }
 }
 .hero__sub { margin-top: 26px; font-size: 1.2rem; color: var(--ink-soft); max-width: 44ch; }
 .hero__actions { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 12px; }
+.hero__proof { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; color: var(--ink-faint); font-size: 0.98rem; }
+.hero__proof strong { font-family: var(--display); font-weight: 600; font-size: 1.12rem; letter-spacing: -0.02em; color: var(--ink); }
+.hero__names { display: inline-flex; align-items: baseline; gap: 12px; white-space: nowrap; }
+.hero__names > span { color: var(--plus); }
 
 .facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
 .facts--four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -190,20 +195,14 @@ a:hover .arrow--down { transform: translateY(2px); }
 .fact__num { font-family: var(--display); font-weight: 700; font-size: clamp(2.2rem, 4vw, 3.2rem); letter-spacing: -0.04em; line-height: 1; }
 .fact__label { margin-top: 10px; color: var(--ink-soft); font-size: 0.98rem; }
 
-/* ---------- tools marquee ---------- */
+/* ---------- tools row ---------- */
+/* A static row, so a visitor looking for one tool can find it at a glance. */
 .tools { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); align-items: center; gap: 24px; padding: 30px clamp(20px, 5vw, 72px); }
 .tools__label { color: var(--ink-soft); font-size: 0.98rem; }
-.marquee {
-  overflow: hidden;
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-}
-.marquee__track { display: flex; gap: 48px; width: max-content; animation: slide 32s linear infinite; }
-.marquee__track .tool { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; font-size: 1.35rem; letter-spacing: -0.02em; white-space: nowrap; color: var(--ink); }
+.toolset { display: flex; flex-wrap: wrap; gap: 14px 30px; }
+.tool { display: inline-flex; align-items: center; gap: 9px; font-weight: 600; font-size: 1.12rem; letter-spacing: -0.02em; white-space: nowrap; color: var(--ink); }
 .tool svg { width: 1.15em; height: 1.15em; flex: none; fill: currentColor; }
 .sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
-.marquee:hover .marquee__track { animation-play-state: paused; }
-@keyframes slide { to { transform: translateX(-50%); } }
 
 /* ---------- section heads ---------- */
 .head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: 48px; }
@@ -333,7 +332,6 @@ a:hover .arrow--down { transform: translateY(2px); }
 @keyframes settle { to { transform: scale(.93); filter: brightness(.86); } }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .marquee__track { animation: none; }
   .pill, .arrow, .nav__links a, .nav__bar, .nav::after { transition: none; }
 }
 
@@ -358,5 +356,8 @@ a:hover .arrow--down { transform: translateY(2px); }
   .tools { grid-template-columns: minmax(0, 1fr); }
   .certs-row { grid-template-columns: minmax(0, 1fr); gap: 16px; }
   .band__inner { padding-top: 64px; padding-bottom: 64px; }
+  /* Less space above the name, so the buttons and the first fact fit on the first screen. */
+  .hero .band__inner { padding-top: 36px; padding-bottom: 44px; }
+  .hero__sub { font-size: 1.1rem; }
   .embed iframe { height: 760px; }
 }
