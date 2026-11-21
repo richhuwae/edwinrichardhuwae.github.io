@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=14">
+<link rel="stylesheet" href="styles.css?v=15">
 
 <!-- Simple Analytics -->
 <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
@@ -52,8 +52,14 @@
 <main class="frame" id="main">
 
   <section class="band hero" id="top">
-    <div class="band__inner">
-      <p class="hero__who rise">Edwin Richard Huwae, data analyst</p>
+    <div class="band__inner hero__grid">
+      <figure class="hero__photo rise rise-1">
+        <picture>
+          <source type="image/webp" srcset="assets/edwin-portrait-400.webp 400w, assets/edwin-portrait-640.webp 640w" sizes="300px">
+          <img src="assets/edwin-portrait-640.jpg" width="640" height="800" alt="Portrait of Edwin Richard Huwae, arms crossed, in a dark sweater" fetchpriority="high">
+        </picture>
+      </figure>
+      <p class="hero__who rise"><picture class="hero__avatar"><source type="image/webp" srcset="assets/edwin-avatar-192.webp"><img src="assets/edwin-avatar-192.jpg" width="192" height="192" alt=""></picture>Edwin Richard Huwae, data analyst</p>
       <h1 class="rise rise-1">Most analysts learn to read a P&amp;L. I built them for nine years.</h1>
       <p class="hero__sub rise rise-2">Now I build the dashboards and KPI definitions that turn finance and people data into numbers a business trusts. Based in Paris, available from January 2027.</p>
       <div class="hero__actions rise rise-2">
