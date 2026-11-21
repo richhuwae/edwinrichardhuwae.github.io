@@ -212,7 +212,10 @@ a:hover .arrow--down { transform: translateY(2px); }
 .more { font-weight: 600; text-decoration: none; border-bottom: 1.5px solid currentColor; padding-bottom: 2px; white-space: nowrap; }
 
 /* ---------- stacked work cards ---------- */
-.stack { display: grid; gap: 28px; }
+/* The gap is the scroll distance each card stays fully in view before the next
+   one slides over it. With a small gap, the next card covers the big figure
+   before anyone has read it. */
+.stack { display: grid; gap: max(28px, 38vh); }
 .card {
   position: sticky;
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
@@ -346,7 +349,10 @@ a:hover .arrow--down { transform: translateY(2px); }
   .facts > .fact + .fact::before, .facts > .fact + .fact::after { display: none; }
   .card { grid-template-columns: minmax(0, 1fr); min-height: 0; }
   .card__art { min-height: 200px; }
-  .card:nth-child(n) { top: 92px; }
+  /* On phones a card is taller than the screen, so stacking would cover its
+     title and links. Cards scroll as a plain list instead. */
+  .stack { gap: 20px; }
+  .card, .card:nth-child(n) { position: relative; top: auto; animation: none; }
   .role { grid-template-columns: minmax(0, 1fr); gap: 8px; }
   .quotes { grid-template-columns: minmax(0, 1fr); }
   .tools { grid-template-columns: minmax(0, 1fr); }
